@@ -1,0 +1,248 @@
+@charset "utf-8";
+/* 즐거운상상 CSS */
+
+@import url(core.css);
+@import url(common.css);
+
+#cont{/*메인컨텐츠 부모박스*/
+	position: relative;
+	width: 990px;
+	min-height: 600px;/*최소높이 600px 유지(내용많으면 늘어남)*/
+	margin: 0 auto;
+/*	outline: 1px solid red;*/
+}
+#cont::after{/*float해제*/
+	content: "";
+	display: block;
+	clear: both;
+}
+#cont>aside{/*속박스공통*/
+	position: relative;
+	float: left;
+	box-sizing: border-box;/*크기고정*/
+}
+/************* LNB(Local Navigation Bar) 영역 ************/
+#cont>aside:first-child{
+	width: 220px;
+	min-height: 580px;/*최소높이*/
+/*	outline: 1px solid green;*/
+}
+/*타이틀*/
+.lnb_tit{
+	font-size: 24px;
+	color: #F25917;
+	width: 100%;
+	height: 36px;
+	margin-top: 30px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #e0e0e0;
+	box-sizing: border-box;
+}
+/*****LNB*****/
+.lnb_menu{
+	width: 165px;
+	margin-top: 10px;
+}
+.lnb_menu>ul{
+	width: 100%;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #e0e0e0;
+}
+.lnb_menu>ul>li{
+	width: 100%;/*한줄에 하나*/
+}
+.lnb_menu>ul>li>a{/*링크*/
+	position: relative;/*부모자격*/
+	display: block;/*디자인적용*/
+	width: 100%;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 33px;
+	color: #808080;
+}
+/*상위메뉴에 마우스 오버시 글자색 변경*/
+.lnb_menu>ul>li:hover>a{
+	color: #444;
+}
+/*상위메뉴에 마우스 오버시 화살표 색 변경*/
+.lnb_menu>ul>li:hover>a::before{
+	color: darkorange;
+}
+
+
+.lnb_menu>ul>li>a::before{/*화살표*/
+	content: "＞";
+	font-size: 11px;
+	font-family: arial;
+	margin-right: 5px;
+	vertical-align: 2px;
+}
+/*선택된 메뉴 디자인*/
+.selm>a{
+	border: 1px solid #f99562;
+	border-radius: 2px;
+	background: linear-gradient(to bottom, #fcb219, #f2400f);
+	color: #fff !important;
+}
+.selm>a::before{
+	opacity: 0;/*앞의 화살표 안보이게*/
+}
+/*******하위메뉴*******/
+.lnb_menu>ul>li>ol{
+	width: 100%;
+	margin-top: -5px;
+	height: 0px;/*하위 감추기*/
+	overflow: hidden;/*하위메뉴 감추기*/
+	transition: height .3s ease-out;/*애니메이션*/
+}
+.lnb_menu>ul>li>ol>li{
+	width: 100%;
+}
+.lnb_menu>ul>li>ol>li>a{/*서브메뉴 링크*/
+	display: block;/*디자인적용*/
+	height: 21px;
+	box-sizing: border-box;
+	padding-top: 5px;
+	padding-left: 15px;
+	font-size: 11px;
+	font-weight: bold;
+	color: #808080;
+}
+.lnb_menu>ul>li>ol>li>a::before{
+	content: "·";
+	font-size: 14px;
+	margin-right: 3px;
+	vertical-align: -1px;
+}
+
+/*하위메뉴가 있는 상위메뉴 끝에+기호넣기*/
+.plus>a::after{
+	content: "＋";
+	display: block;
+	position: absolute;
+	top: 0px;
+	right: 10px;
+	font-family: arial;
+	font-size: 12px;
+	font-weight: bold;
+	color: darkorange;
+}
+.plus2>a::after{/*마이너스기호*/
+	content: "－";
+	display: block;
+	position: absolute;
+	top: 0px;
+	right: 10px;
+	font-family: arial;
+	font-size: 12px;
+	font-weight: bold;
+	color: #fff;
+}
+
+/*하위메뉴 선택 글자색 변경 class*/
+.sfc a{
+	color:#F25917 !important;
+}
+
+/****** 가이드/날짜 *****/
+.lnb_date{
+	width: 165px;
+}
+.lnb_date>aside{
+	padding-top: 20px;
+	float: left;
+}
+/*가이드*/
+.lnb_date>aside:first-child{
+	width: 40%;
+}
+.lnb_date>aside:first-child>img:last-child{/*더보기이미지*/
+	vertical-align: 1px;/*inline인데 아래로 내려간 요소를 세로로 움직일때 vertical-align을 사용한다.*/
+}
+/*오늘날짜*/
+.lnb_date>aside:last-child{
+	width: 60%;
+}
+.lnb_date>aside:last-child>span{
+	display: block;/*디자인적용*/
+	text-align: center;
+	font: bold 14px arial, dotum;
+}
+.lnb_date>aside:last-child>span:first-child b{/*요일*/
+	font-size: 11px;
+}
+.lnb_date>aside:last-child>span:first-child em{/*날짜*/
+	font-size: 20px;
+	color: #ff4119;
+	font-style: normal;
+}
+
+/*링크버튼들*/
+.lnb_btns li{
+	padding-right: 7px;
+}
+/*문의안내*/
+.lnb_info{
+	margin-top: 20px;
+}
+
+/****************** 서브 내용 영역*************************/
+#cont>aside:last-child{
+	width: 759px;
+	min-height: 700px;/*최소높이*/
+	border-left: 1px solid #e0e0e0;
+	box-shadow: -5px 0 5px #F1F1F1;
+/*	outline: 1px solid blue;*/
+}
+/*서브페이지 제목바*/
+#cont>aside:last-child>hgroup{
+	width: 100%;
+	height: 105px;
+	background: url(../images/img_tit_2.jpg) no-repeat;
+	overflow: hidden;
+	/*자식요소의 margin값을 포함해주는 속성이기도 함.*/
+}
+#cont>aside:last-child>hgroup>h3{/*페이지위치바*/
+	width: 408px;
+	height: 16px;
+	margin: 20px 0 0 40px;
+	font: 12px "돋움","맑은 고딕";
+	color: #999898;
+}
+#cont>aside:last-child>hgroup>h3>img{
+	vertical-align: 0px;
+}
+/*큰제목*/
+#cont>aside:last-child>hgroup>h1{
+	width: 257px;
+	height: 32px;
+	margin-top: 10px;
+	margin-left: 40px;
+	font-size: 32px;
+	font-weight: bold;
+	color: #444;
+}
+/*서브컨텐츠 박스*/
+.subcont{
+	margin:  30px 0 0 35px;
+}
+
+/*위치바 글자 class*/
+.setsf{
+	font-weight: bold;
+	color: #666;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

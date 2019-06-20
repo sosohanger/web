@@ -1,0 +1,78 @@
+@charset "utf-8";
+/* core.css 사이트 전체 공통 디자인*/
+/*웹폰트: 나눔고딕*/
+@font-face{
+	font-family: NG;/*내가지은이름*/
+	src: url(../fonts/NanumGothic.eot) format("eot"),
+		url(../fonts/NanumGothic.woff) format("woff"),
+		url(../fonts/NanumGothic.ttf) format("ttf");	
+}
+
+
+
+html,body{
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 100%;
+}
+body{
+	color: #000;
+/*	font-size: 15px;16px 기본사이즈*/
+	font-family: NG;
+/*	background-color: #f0f0f0;연한회색 배경색*/
+	overflow-x: hidden;/*가로 스크롤 안생기게함*/
+}
+/*
+body>section{
+	overflow-x: hidden;
+}
+*/
+ul, ol{/*3무*/
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+/*.clb는 공통 float해제용 class임*/
+ul::after, ol::after, nav::after, .clb::after{/*float해제*/
+	content: "";
+	display: block;
+	clear: both;
+}
+li,dl{
+	float: left;/*옆으로 흐르게*/
+}
+
+a{
+	color: #222;
+/*	letter-spacing: -1px;글자간격*/
+	text-decoration: none;/*밑줄없앰*/
+}
+
+img{
+	border: none;/*이미지 링크시 테두리 없앰*/
+	vertical-align: bottom;/*이미지를 박스에 넣었을때 하단 간극이 생기는 현상을 해결함!!*/
+/*	diaplay:block; 하단간극없앰(택일)*/
+}
+/*글자셋팅*/
+body, button, h1, h2,h3,h4,h5,h6, input, select, table, textarea{
+	font-family: NG, sans-serif;
+	font-size: 16px;
+	line-height: 1.267em;/*19px*/
+}
+
+
+/*태그 초기화 설정*/
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,
+blockquote,pre,abbr,address,cite,code,del,dfn,em,img,
+ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,
+fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,
+article,aside,canvas,details,figcaption,figure,footer,header,hgroup,
+menu,nav,section,summary,time,mark,audio,video,button{margin:0; padding:0;}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {  display: block; }
+
+
+
+
+
