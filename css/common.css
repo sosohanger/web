@@ -1,0 +1,194 @@
+@charset "utf-8";
+/* common.css - GNB 및 footer, 레이아웃 공통 디자인 CSS */
+
+/************  로고, GNB 메뉴 탑영역 ****************/
+#top{/*탑부분 겉박스 100%*/
+	position: relative;
+	width: 100%;
+	height: 87px;
+/*	background-color: #FBB5B7;*/
+	z-index: 99999;/*가장 높은 z-index*/
+}
+#top>div{/*탑부분 속박스 중앙정렬*/
+	position: relative;
+	width: 990px;
+	height: 100%;
+	margin: 0 auto;/*가로중앙-static, relative일때 width값 있을때*/
+}
+
+/*로고박스*/
+#top>div>h1{
+	position: absolute;
+	top: 5px;
+}
+/*탑 메뉴 박스*/
+#tmenu{
+	position: absolute;
+	top: 10px;
+	right: 40px;
+}
+#tmenu a{/*탑메뉴 링크*/
+	display: block;
+	width: 100%;
+	height: 100%;
+	font-size: 11px;
+	font-weight: bold;
+	line-height: 19px;
+	letter-spacing: -1px;
+	color: #3a3a3a;
+	padding: 0 6px;
+}
+/*로그인 글자색*/
+.spc{
+	color: #5388cd !important;
+}
+/*언어선택박스*/
+#lang{
+	position: relative;
+	top: -2px;
+	left: 10px;
+	width: 99px;
+	height: 19px;
+	border: 1px solid #cbcbcb;
+	color: #888;
+	font-size: 11px;
+	box-shadow: 1px 1px 6px #ccc inset;/*inset 내부그림자*/
+}
+
+/************* GNB 메뉴 ********************/
+#gnb{
+	position: absolute;
+	top: 40px;
+	left: 199px;/*위치조정 padding-left만큼*/
+	background-color: #fff;
+	padding-left: 6px;/*하위메뉴 블릿이 잘려서 안보이므로*/
+	height: 27px;/*최상위메뉴만 보이는 크기로 변경*/
+	overflow: hidden;/*넘치는 하위메뉴 숨기기*/
+	transition: height .3s ease-in-out;/*애니메이션 설정*/
+}
+/*GNB에 마우스 오버시 gnb 높이값 변경하기*/
+#gnb:hover{
+	height: 100px;/*하위메뉴가 모두 보이는 높이값*/
+}
+
+/*GNB 100% 배경라인박스*/
+.gnbline{
+	position: absolute;
+	top: 87px;
+	width: 100%;/*top의 직계자식이므로 화면에 꽉참*/
+	height: 0px;/*140px*/
+	background-color: #fff;
+	border-bottom: 3px solid #5388cd;
+	box-shadow: 0px 2px 2px #666;
+}
+/*배경라인박스에 배경이미지 넣기*/
+.gnbline::before{
+	content: "";
+	display: block;
+	width: 990px;
+	height: 100%;
+	margin: 0 auto;/*중앙정렬*/
+	background: url(../images/img_gnb_1.gif) no-repeat 0 -9px;/*배경이미지 위치이동 가로 left 0, 세로 top -9px*/
+}
+
+/*각 메뉴 박스*/
+#gnb dl{
+	position: relative;/*부모자격*/
+	width: 128px;
+	height: 15px;
+	border-left: 1px solid #fff;
+}
+/*각 메뉴 박스에 마우스 오버시 라인색 변경하기*/
+#gnb:hover dl{
+	border-left-color: #CCC;
+}
+/*각 메뉴 박스에 마우스 오버시 글자색 변경하기*/
+#gnb dl:hover dt a{
+	color: red;
+}
+/*각 메뉴 박스에 마우스 오버시 최상위메뉴 오른쪽에 별넣기*/
+#gnb dl:hover dt a::after{
+	content:"＊";
+	display:inline-block;
+	position: relative;
+	top: -5px;	
+}
+
+
+#gnb dl dt{/*최상위메뉴*/
+	width: 105px;
+	height: 27px;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 27px;
+	padding-left: 15px;
+	white-space: nowrap;/*자동줄바꿈방지*/
+}
+/*캐릭터쇼핑몰 아이콘 넣기*/
+.icon1::before{
+	content: url(../images/icon_gift.gif);
+	margin-right: 4px;
+	vertical-align: -2px;
+}
+
+#gnb dl dd{/*하위메뉴*/
+	position: relative;/*빨간동그라미 부모*/
+	width: 105px;
+	height: 21px;
+	font-size: 11px;
+	font-weight: bold;
+	white-space: nowrap;/*자동줄바꿈방지*/
+	line-height: 21px;
+	padding-left: 15px;
+}
+#gnb dl dd a{
+	color: #999;
+}
+/*하위 메뉴에 마우스 오버시 글자색 진하게 변경*/
+#gnb dl dd:hover a{
+	color: #333;
+}
+/*하위 메뉴에 마우스 오버시 앞에 빨간 동그라미 화살표넣기*/
+#gnb dl dd:hover a::before{
+	content: "＞";
+	display: block;
+	position: absolute;
+	top: 4px;
+	left: -5px;
+	width: 11px;
+	height: 11px;
+	background-color: red;
+	border-radius: 50%;/*원*/
+	text-align: center;
+	line-height: 11px;
+	color: #fff;
+	font-size: 9px;
+	font-family: arial;
+}
+
+/********** 하단회사정보 영역 *************/
+#info{/*겉박스 100%*/
+	position: relative;
+	width: 100%;
+	height: 120px;
+	top: 940px;
+	background-color: #ffffff;
+}
+
+/*회사정보박스*/
+#info>address{	
+	position: relative;
+	width: 990px;
+	top: -30px;
+	left: 40%;
+}
+/*회사정보 이미지*/
+#info>img{
+	margin-top: 30px;
+	margin-left: 20px;
+}	
+
+
+
+
+

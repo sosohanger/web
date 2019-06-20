@@ -1,0 +1,186 @@
+@charset "utf-8";
+/* main.css - 메인페이지 CSS */
+
+@import url("core.css");
+@import url("common.css");
+
+/*********** 배너부분 **********/
+#banner{/*겉박스 100%*/
+	position: relative;
+	width: 100%;
+	height: 1023px;
+}
+#banner>div{/*속박스 중앙*/
+	position: relative;
+	width: 990px;
+	height: 100%;
+	margin: 0 auto;/*가로중앙*/
+/*background-color: #F5EC6C;*/
+}
+
+/* 배너 슬라이드 리스트 */
+#slider{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+#slider>li{/*각 슬라이드 리스트*/
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	opacity: 0;/*투명하게*/
+	transition: opacity .8s ease-in-out;
+}
+#slider>li>span{/*IR(Image Replacement)*/
+	display: none;
+}
+/*투명도조절 class*/
+.opaView{/*보이게*/
+	opacity: 1 !important;
+	z-index: 1;/*겹쳐진 li 중 보이는 li의 위치를 맨위로 올림*/
+	cursor: pointer;/*손가락*/
+}
+
+/*배너 이동버튼*/
+.abtn{/*a태그*/
+	position: absolute;/*display가 inline인 a태그가 block이됨*/
+	top: 50%;
+	transform: translateY(-50%);/*세로축 정중앙*/
+	width: 25px;
+	height: 49px;
+/*	outline: 1px solid red;*/
+	z-index: 2;
+}
+.abtn>span{/*IR-alt속성대신 배경이미지 설명넣기*/
+	display: none;
+}
+
+.abtn:hover{/*버튼에 마우스 오버시 색상이 바뀌는 배경이미지로 배경이미지 위치값을 변경해 준다.*/
+	background-position: 0 -49px;/*y축방향 위로 이동*/
+}
+
+
+/*각 li에 배경이미지로 배너 셋팅*/
+#slider>li:nth-child(1){
+	background: url(../img/bg_1.png) no-repeat center;
+}
+#slider>li:nth-child(2){
+	background: url(../img/bg_2.png) no-repeat center;
+}
+#slider>li:nth-child(3){
+	background: url(../img/bg_3.png) no-repeat center;
+}
+
+/*************** 컨텐츠 영역 ******************/
+#cont{/*유일박스 중앙*/
+	position: relative;
+	width: 100%;
+	height: 469px;
+	margin: 0 auto;/*가로중앙*/
+}
+/* 컨텐츠 구분 박스 ul*/
+#cont>ul{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+#cont>ul>li{
+	margin-top: 0;
+	box-sizing: border-box;/*크기유지*/
+}
+/********메뉴1********/
+.bb1>a{
+	position: absolute;
+	width: 100%;
+	height: 469px;
+	background-color: #000000;
+}
+.bb1>div img{
+	position: absolute;
+	top: 120px;
+	left: 10%;
+	width: 549px;
+	height: 253px;
+	margin-bottom: 0px;
+}
+.bb1>div>a>img{
+	position: absolute;
+	top: 40%;
+	left: 68%;
+	width: 248px;
+	height: 72px;
+	margin-bottom: 0px;
+}
+
+.s0{
+	position: absolute;
+	width: 400px;
+	height: 100px;
+	font-size: 15px;
+	font-family: '210 옴니고딕 020';
+	top: 58%;
+	left: 63%;
+	color: #FFFFFF;
+	text-align: center;
+}
+
+
+/********메뉴2********/
+.bb2>a{
+	position: absolute;
+	width: 100%;
+	height: 469px;
+	top: 470px;
+	left: 0px;
+	background-color: #e9e9e9;
+}
+.bb2>div>a>img{
+	position: absolute;
+	top: 115%;
+	left: 55%;
+	width: 557px;
+	height: 332px;
+}
+.bb2>div>span{
+	position: absolute;
+	top: 160%;
+	left: 20%;
+	font-family:'210 옴니고딕 020';
+	text-align: center;
+	color: fffff !important;
+}
+.s1{
+	position: absolute;
+	width: 300px;
+	height: 100px;
+	font-size: 60px;
+	font-family: "210 옴니고딕 040";
+	top: 150%;
+	left: 20%;
+}
+/********메뉴3********/
+.bb3>a{
+	position: absolute;
+	width: 100%;
+	height: 469px;
+	top: 940px;
+	left: 0px;
+	background-color: #ffffff;
+}
+.bb3>div>a>img{
+	position: absolute;
+	top: 210%;
+	left: 0%;
+	width: 713px;
+	height: 442px;
+}
+
+.s2{
+	position: absolute;
+	width: 800px;
+	height: 100px;
+	font-size: 60px;
+	font-family: "210 옴니고딕 040";
+	top: 250%;
+	left: 65%;
+}

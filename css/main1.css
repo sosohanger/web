@@ -1,0 +1,63 @@
+@charset "utf-8";
+/* main.css - 메인페이지 CSS */
+
+@import url("core.css");
+@import url("common.css");
+
+/*********** 배너부분 **********/
+#banner{/*겉박스 100%*/
+	position: relative;
+	width: 100%;
+	height: 1023px;
+}
+#banner>div{/*속박스 중앙*/
+	position: relative;
+	width: 990px;
+	height: 100%;
+	margin: 0 auto;/*가로중앙*/
+/*background-color: #F5EC6C;*/
+}
+
+/* 배너 슬라이드 리스트 */
+#slider{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+#slider>li{/*각 슬라이드 리스트*/
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	opacity: 0;/*투명하게*/
+	transition: opacity .8s ease-in-out;
+}
+#slider>li>span{/*IR(Image Replacement)*/
+	display: none;
+}
+/*투명도조절 class*/
+.opaView{/*보이게*/
+	opacity: 1 !important;
+	z-index: 1;/*겹쳐진 li 중 보이는 li의 위치를 맨위로 올림*/
+	cursor: pointer;/*손가락*/
+}
+
+/*배너 이동버튼*/
+.abtn{/*a태그*/
+	position: absolute;/*display가 inline인 a태그가 block이됨*/
+	top: 50%;
+	transform: translateY(-50%);/*세로축 정중앙*/
+	width: 25px;
+	height: 49px;
+/*	outline: 1px solid red;*/
+	z-index: 2;
+}
+.abtn>span{/*IR-alt속성대신 배경이미지 설명넣기*/
+	display: none;
+}
+
+.abtn:hover{/*버튼에 마우스 오버시 색상이 바뀌는 배경이미지로 배경이미지 위치값을 변경해 준다.*/
+	background-position: 0 -49px;/*y축방향 위로 이동*/
+}
+.aa{
+	text-align: center;
+}

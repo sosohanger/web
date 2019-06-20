@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import url(core.css);
+@import url(common.css);
+
+#cont{
+	height: 600px;
+}
